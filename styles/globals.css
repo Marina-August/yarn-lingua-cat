@@ -12,7 +12,7 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  padding: 120px 24px 160px 24px;
+  /* padding: 120px 24px 160px 24px; */
   pointer-events: none;
 }
 
@@ -71,9 +71,12 @@
 
 /* Tailwind Styles */
 
-.app {
+/* .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
-}
+} */
+.app {
+    @apply relative z-10 flex justify-center items-center flex-col;
+  }
 
 .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;

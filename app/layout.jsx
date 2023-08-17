@@ -1,4 +1,6 @@
-import Footer from '@/components/footer';
+import Footer from '@/components/Footer';
+import Nav from '@/components/Nav';
+import Provider from '@/components/Provider';
 import '@/styles/globals.css'
 
 
@@ -15,8 +17,9 @@ const RootLayout =({ children })=>{
           <div className='gradient'/>
         </div>
         <main className='app'>
+            {/* <Nav/> */}
             {children}
-            <Footer/>
+            {/* <Footer/> */}
         </main>
       </body>
     </html>
