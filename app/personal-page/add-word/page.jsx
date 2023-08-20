@@ -1,9 +1,11 @@
 "use client";
 
 import Form from "@/components/Form";
-import classes from './cat.module.css'
+import Cat from "@/components/Cat";
+import { useState } from "react";
 
 const AddWord =()=>{
+    const [catHunger, setCatHunger] =useState(0);
     
     const addWord = async (word)=>{
         console.log("page", word)
@@ -28,21 +30,14 @@ const AddWord =()=>{
           } 
     }
 
+    const feedCat =(hunger)=>{
+        setCatHunger(hunger);
+    }
+
     return (
         <>
-         <div className={classes.container}>
-            <div className={classes.shadow}></div>
-            <div className={classes.cat}>
-                <div className={classes.ear}></div>
-                <div className={classes.eye}></div>
-                <div className={classes.mouth}></div>
-                <div className={classes.nose}></div>
-                <div className={classes.tail}></div>
-                <div className={classes.body}></div>
-                <div className={classes.bubble}></div>
-            </div>
-        </div>
-        <Form type="Add" onWordHandler={addWord}/>
+        {/* <Cat onFeed ={feedCat}/> */}
+        <Form type="Add" onWordHandler={addWord} catHunger ={catHunger} />
          </>
     )
 }

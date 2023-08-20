@@ -1,4 +1,3 @@
-
 .container {
     height: 200px;
     width: 350px;
@@ -66,7 +65,7 @@
     position: absolute;
     height: 0;
     width: 0;
-    border-top: 8px solid #ef926b;
+    border-top: 8px solid #cd7f5d;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     bottom: 7px;
@@ -153,4 +152,116 @@
     50% {
         transform: scaleX(0.7);
     }
+}
+
+.bubbleWithText {
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 105px;
+    top: -10px;
+    bottom: 5rem;
+    border-radius: 50px 50px 50px 5px;
+    animation: bubble-scale 2s infinite;
+}
+@keyframes bubbleWithText-scale {
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+.text{
+    font-size: x-small;
+    margin-top: 0.5rem;
+    color: rgb(96, 95, 95);
+}
+
+.tailAction {
+    background-color: #d07219;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    right: 150px;
+    bottom: 0;
+    border-radius: 20px 0 0 20px;
+    animation: tailAction-scale 2s infinite;
+}
+
+@keyframes tailAction-scale {
+    70% {
+        transform: scale(0.8);
+    }
+}
+
+.tailUpDown {
+    background-color: #d07219;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    right: 150px;
+    bottom: 0;
+    border-radius: 20px 0 0 20px;
+    animation: tailUpDown 5s infinite;
+}
+
+@keyframes tailUpDown  {
+    from {top: 45px;}
+    to {top: 35px;}
+  }
+
+
+.eyeOpen,
+.eyeOpen:before {
+    height: 8px;
+    width: 10px;
+    border: 3.5px solid #2c2c2c;
+    position: absolute;
+    border-radius: 0 0 30px 30px;
+}
+.eyeOpen {
+    top: 18px;
+    left: 15px;
+}
+.eyeOpen:before {
+    content: "";
+    left: 30px;
+}
+
+.bodyAwake {
+    background-color: #f19b1a;
+    height: 90px;
+    width: 140px;
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    border-radius: 60px 60px 0 0;
+    transform-origin: bottom right;
+}
+.bodyAwake:before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 12px;
+    width: 30px;
+    border-radius: 6px;
+    bottom: 0;
+    left: 22px;
+    box-shadow: 45px 0 #ffffff;
+}
+
+
+.hunger{
+    position: absolute;
+    width: 40px;
+    height: 130px;
+    background-color: #7388bd;
+    margin-left: 200px;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    text-align: center;
+    margin-top: -70px;
+    border-radius:5px;
+    color: #ffffff;
 }

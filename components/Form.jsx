@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Form = ({type, onWordHandler})=>{
+const Form = ({type, onWordHandler, catHunger})=>{
     const [word, setWord] = useState('');
     const [sourceLanguage, setSourceLanguage] = useState('Finnish');
     const [translation, setTranslation] = useState('');

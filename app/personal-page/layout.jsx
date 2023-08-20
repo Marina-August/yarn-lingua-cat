@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Cat from '@/components/Cat';
 
 const PersonalLayout =({ children })=>{
     return (
@@ -28,6 +29,7 @@ const PersonalLayout =({ children })=>{
            </Link>
         </div>
         <div>
+          <Cat/>
           {children}  
         </div> 
       </div>
