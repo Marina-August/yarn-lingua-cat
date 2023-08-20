@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const Form = ({type, onWordHandler})=>{
     const [word, setWord] = useState('');
-    const [sourceLanguage, setSourceLanguage] = useState('');
+    const [sourceLanguage, setSourceLanguage] = useState('Finnish');
     const [translation, setTranslation] = useState('');
-    const [targetLanguage, setTargetLanguage] = useState('');
+    const [targetLanguage, setTargetLanguage] = useState('English');
     const [example, setExample] = useState('');
     const [ok, setOk] = useState(false);
 
@@ -19,9 +19,8 @@ const Form = ({type, onWordHandler})=>{
     }
 
     const wordHandler = (event)=>{
-        if (event.target.value.trim().length > 0){
-            setWord(event.target.value)
-        }
+        console.log("Word", event.target.value); 
+            setWord(event.target.value)  
         
     }
 
@@ -32,15 +31,11 @@ const Form = ({type, onWordHandler})=>{
     }
 
     const translationHandler =(event)=>{
-        if (event.target.value.trim().length > 0){
-            setTranslation(event.target.value)
-        }
+            setTranslation(event.target.value)   
     }
 
     const exampleHandler =(event)=>{
-        if (event.target.value.trim().length > 0){
             setExample(event.target.value)
-        }
     }
 
     useEffect(
@@ -115,7 +110,8 @@ const Form = ({type, onWordHandler})=>{
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Usage Examples
           </span>
-          <textarea className='form_textarea' onChange={exampleHandler} value={example}></textarea>
+          <textarea className='form_textarea' onChange={exampleHandler} value={example} maxLength="150" 
+          placeholder=" Enter your Example (max 150 symbols)"></textarea>
          </label>
          <div className='flex-end mx-3 mb-5 gap-4'>
           <Link href='/personal-page' className='text-gray-500 text-lg hover:text-gray-800'>

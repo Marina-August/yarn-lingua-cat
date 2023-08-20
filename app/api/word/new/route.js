@@ -8,7 +8,7 @@ export const POST = async (req, res) =>{
     try{
         await connectToDB();
         const sourceLanguage = await Language.findOne({ name:source })
-        console.log("source", sourceLanguage);
+        // console.log("source", sourceLanguage);
         const sourceId = sourceLanguage._id;
         
         const targetLanguage = await Language.findOne({ name:target })
