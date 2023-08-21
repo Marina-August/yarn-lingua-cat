@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Form = ({type, onWordHandler, catHunger})=>{
+const Form = ({type, onWordHandler})=>{
     const [word, setWord] = useState('');
     const [sourceLanguage, setSourceLanguage] = useState('Finnish');
     const [translation, setTranslation] = useState('');
@@ -75,8 +75,6 @@ const Form = ({type, onWordHandler, catHunger})=>{
         onWordHandler(newWord);
 
     }
-
-
 
     return (
         <section className='w-full max-w-full flex-col -mt-16'>

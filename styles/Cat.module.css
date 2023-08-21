@@ -253,15 +253,36 @@
 
 
 .hunger{
+    display: flex;
     position: absolute;
     width: 40px;
-    height: 130px;
-    background-color: #7388bd;
+    /* height: 130px; */
+    /* background-color: #7388bd; */
     margin-left: 200px;
     text-orientation: upright;
     writing-mode: vertical-rl;
-    text-align: center;
+    /* text-align: center; */
     margin-top: -70px;
     border-radius:5px;
     color: #ffffff;
+}
+
+.h{
+    text-align: center;
+    background-color: #f1a83a;
+}
+.u{
+    background-color: #d9932b;
+}
+.n{
+    background-color: #c18122;
+}
+.g{
+    background-color: #a36e1e;
+}
+.e{
+    background-color: #836334;
+}
+.r{
+    background-color: #6c5532;
 }

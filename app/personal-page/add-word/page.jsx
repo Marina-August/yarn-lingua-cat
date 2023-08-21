@@ -1,11 +1,8 @@
 "use client";
 
 import Form from "@/components/Form";
-import Cat from "@/components/Cat";
-import { useState } from "react";
 
 const AddWord =()=>{
-    const [catHunger, setCatHunger] =useState(0);
     
     const addWord = async (word)=>{
         console.log("page", word)
@@ -30,14 +27,9 @@ const AddWord =()=>{
           } 
     }
 
-    const feedCat =(hunger)=>{
-        setCatHunger(hunger);
-    }
-
     return (
         <>
-        {/* <Cat onFeed ={feedCat}/> */}
-        <Form type="Add" onWordHandler={addWord} catHunger ={catHunger} />
+        <Form type="Add" onWordHandler={addWord} />
          </>
     )
 }

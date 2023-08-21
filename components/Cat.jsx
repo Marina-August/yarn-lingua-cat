@@ -5,10 +5,9 @@ import { useState } from 'react';
 const Cat =({onFeed})=>{
     const classes = {};
     const [isAwake, setIsAwake] = useState(false);
-    const [isHunger, setIsHunger] = useState(5);
+    
     const wakeUpHandler =()=>{
         setIsAwake(true);
-        onFeed(isHunger);
     }
 
 
