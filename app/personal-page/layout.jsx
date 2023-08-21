@@ -29,7 +29,7 @@ const PersonalLayout =({ children })=>{
            </Link>
         </div>
         <div>
-          <Cat/>
+          {/* <Cat/> */}
           {children}  
         </div> 
       </div>
