@@ -1,9 +1,10 @@
 "use client";
 
-import classes from '../styles/Cat.module.css';
+// import classes from '../styles/Cat.module.css';
 import { useState } from 'react';
 
 const Cat =({onFeed})=>{
+    const classes = {};
     const [isAwake, setIsAwake] = useState(false);
     const [isHunger, setIsHunger] = useState(5);
     const wakeUpHandler =()=>{
@@ -16,6 +17,8 @@ const Cat =({onFeed})=>{
         {isAwake && <div className={classes.hunger}>Hunger</div>}
         <div className={classes.container} onClick={wakeUpHandler}>
             <div className={!isAwake && classes.shadow}></div>
+            <div>instead of a cat</div>
+
             <div className={classes.cat}>
                 <div className={classes.ear}></div>
                 <div className={!isAwake? classes.eye:classes.eyeOpen}></div>
