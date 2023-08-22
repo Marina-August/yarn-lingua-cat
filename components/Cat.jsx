@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 const Cat =()=>{
     const [isAwake, setIsAwake] = useState(false);
     const counter = useSelector((state)=>state.counter);
+    console.log("counter",counter);
     
     const wakeUpHandler =()=>{
         setIsAwake(true);
@@ -28,13 +29,15 @@ const Cat =()=>{
             <div className="cat">
                 <div className="ear"></div>
                 <div className={!isAwake? "eye":"eyeOpen"}></div>
-                <div className="mouth"></div>
+                {counter <6 &&<div className="mouth"></div>}
+                {counter >=6 && <div className="mouthNotHunger"></div>}
                 <div className= "nose"></div>
                 <div className={!isAwake? "tailAction":"tailUpDown"}></div>
                 <div className={!isAwake? "body": "bodyAwake"}></div>
-                <div className="bubble"></div>
+                {!isAwake && <div className="bubble"></div>}
                 <div className="bubbleWithText">
-                    <p className="text">{!isAwake? "Wake Me Up":"Feed Me"}</p>
+                   {counter <6 && <p className="text">{!isAwake? "Wake Me Up":"Feed Me"}</p>}
+                   {counter>=6 && <p className="text">Thank you!</p>}
                     </div>
             </div>
         </div>

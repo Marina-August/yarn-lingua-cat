@@ -25,7 +25,7 @@ const AddWord =()=>{
             if (response.ok) {
             //   router.push("/personal-page");
               console.log("ok");
-              dispatch(vocabularyActions.increment());
+                 dispatch(vocabularyActions.increment());        
             }
           } catch (error) {
             console.log(error);

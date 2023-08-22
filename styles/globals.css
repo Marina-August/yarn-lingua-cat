@@ -145,15 +145,15 @@
     left: 6px;
 }
 .mouth {
-    background-color: #2c2c2c;
-    height: 15px;
-    width: 17px;
-    position: absolute;
-    border-radius: 0 0 5px 5px;
-    top: 38px;
-    left: 27px;
-    animation: mouth-move 2s infinite;
-    transform-origin: top;
+  background-color: #2c2c2c;
+  height: 12px;
+  width: 28px;
+  position: absolute;
+  border-radius: 2px 2px 13px 13px;
+  top: 38px;
+  left: 22.85px;
+  animation: mouth-move 2s infinite;
+  transform-origin: top;
 }
 @keyframes mouth-move {
     50% {
@@ -276,7 +276,7 @@
     right: 150px;
     bottom: 0;
     border-radius: 20px 0 0 20px;
-    animation: tailUpDown 5s infinite;
+    animation: tailUpDown 2s infinite;
 }
 
 @keyframes tailUpDown  {
@@ -324,6 +324,44 @@
     box-shadow: 45px 0 #ffffff;
 }
 
+.mouthNotHunger {
+  background-color: #2c2c2c;
+  height: 12px;
+  width: 28px;
+  position: absolute;
+  border-radius: 2px 2px 13px 13px;
+  top: 38px;
+  left: 22.85px;
+  /* animation: mouthNotHunger-move 2s infinite alternate; */
+  /* transform-origin: top; */
+  animation: mouthNotHunger-scale 4s infinite alternate;
+}
+
+/* @keyframes mouthNotHunger-move {
+  0% {
+    left: 21px;
+    right: initial;
+  }
+  /* 50% {
+    left: 50px; 
+    /* right: initial;
+  } */ 
+  /* 100% {
+    left: initial;
+    right: 28px;
+  }
+} */ 
+
+@keyframes mouthNotHunger-scale {
+  0%, 100% {
+    transform: scaleX(1); 
+  }
+  50% {
+    transform: scaleX(1.2); 
+  }
+}
+
+
 
 .hunger{
     display: flex;
@@ -347,13 +385,13 @@
     background-color: #98c8f2;
 }
 .u{
-    background-color: #88b2d6;
+    background-color: #f4d491;
 }
 .n{
     background-color: #789bb9;
 }
 .g{
-    background-color: #5e7b95;
+    background-color: #eec367;
 }
 .e{
     background-color: #58738b;
@@ -362,7 +400,7 @@
     border-radius:5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    background-color: #425667;
+    background-color: #eea042;
 }
 
 /* Tailwind Styles */

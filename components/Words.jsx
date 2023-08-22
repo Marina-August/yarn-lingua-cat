@@ -43,13 +43,13 @@ const Words =({onCheckWords})=>{
         </Column>
         
       </DataTable>}
-         {allWords.map(el=>(
+         {/* {allWords.map(el=>(
             <div key={el._id}>
             <p>{el.word}</p>
             <p>{el.translation}</p>
             <p>{el.example}</p>
             </div>
-         ))}
+         ))} */}
         </>
     )
 }

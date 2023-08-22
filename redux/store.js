@@ -8,6 +8,9 @@ const vocabularySlice = createSlice({
     reducers:{
         increment(state){
             state.counter++;
+        },
+        reset(state){
+            state.counter = 0;
         }
     }
 })
