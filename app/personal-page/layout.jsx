@@ -1,8 +1,9 @@
-
+// "use client"
 
 import Link from 'next/link';
 import Image from 'next/image';
 import Cat from '@/components/Cat';
+import ReduxProvider from '@/redux/provider';
 
 const PersonalLayout =({ children })=>{
     return (
@@ -29,8 +30,10 @@ const PersonalLayout =({ children })=>{
            </Link>
         </div>
         <div>
-          <Cat/>
-          {children}  
+          <ReduxProvider>
+            <Cat/>
+            {children} 
+          </ReduxProvider>
         </div> 
       </div>
     </div>

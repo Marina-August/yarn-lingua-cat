@@ -76,8 +76,8 @@
     width: 350px;
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 20%;
-    top: 20%;
+    left: 10%;
+    top: 90%;
 }
 .cat {
     background-color: #f19b1a;
@@ -331,33 +331,38 @@
     width: 40px;
     /* height: 130px; */
     /* background-color: #7388bd; */
-    margin-left: 200px;
+    left: 4%;
     text-orientation: upright;
     writing-mode: vertical-rl;
     /* text-align: center; */
-    margin-top: -70px;
+    top: 65%;
     border-radius:5px;
     color: #ffffff;
 }
 
 .h{
-    text-align: center;
-    background-color: #f1a83a;
+    border-radius:5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #98c8f2;
 }
 .u{
-    background-color: #d9932b;
+    background-color: #88b2d6;
 }
 .n{
-    background-color: #c18122;
+    background-color: #789bb9;
 }
 .g{
-    background-color: #a36e1e;
+    background-color: #5e7b95;
 }
 .e{
-    background-color: #836334;
+    background-color: #58738b;
 }
 .r{
-    background-color: #6c5532;
+    border-radius:5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #425667;
 }
 
 /* Tailwind Styles */

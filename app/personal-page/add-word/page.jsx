@@ -1,8 +1,12 @@
 "use client";
 
 import Form from "@/components/Form";
+import { useDispatch, useSelector} from 'react-redux';
+import { vocabularyActions } from "@/redux/store";
 
 const AddWord =()=>{
+  const counter = useSelector((state)=> state.counter);
+  const dispatch = useDispatch();
     
     const addWord = async (word)=>{
         console.log("page", word)
@@ -21,6 +25,7 @@ const AddWord =()=>{
             if (response.ok) {
             //   router.push("/personal-page");
               console.log("ok");
+              dispatch(vocabularyActions.increment());
             }
           } catch (error) {
             console.log(error);

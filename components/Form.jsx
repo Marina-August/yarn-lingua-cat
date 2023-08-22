@@ -58,9 +58,9 @@ const Form = ({type, onWordHandler})=>{
         const target = targetLanguage;
         const usage =  example;
 
-        setSourceLanguage('');
+        setSourceLanguage('Finnish');
         setWord('');
-        setTargetLanguage('');
+        setTargetLanguage('English');
         setTranslation('');
         setExample('');
 

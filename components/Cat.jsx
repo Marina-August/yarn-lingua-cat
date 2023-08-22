@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const Cat =({onFeed})=>{
-    const classes = {};
+const Cat =()=>{
     const [isAwake, setIsAwake] = useState(false);
+    const counter = useSelector((state)=>state.counter);
     
     const wakeUpHandler =()=>{
         setIsAwake(true);
@@ -14,12 +15,12 @@ const Cat =({onFeed})=>{
     return (
         <>
         {isAwake && <div className="hunger">
-            <div className="h">H</div>
-            <div className="u">U</div>
-            <div className="n">N</div>
-            <div className="g">G</div>
-            <div className="e">E</div>
-            <div className="r">R</div>
+            {counter<1 && <div className="h">H</div>}
+            {counter<2 && <div className="u">U</div>}
+            {counter<3 && <div className="n">N</div>}
+            {counter<4 && <div className="g">G</div>}
+            {counter<5 && <div className="e">E</div>}
+            {counter<6 && <div className="r">R</div>}
             </div>}
         <div className="container" onClick={wakeUpHandler}>
             <div className={!isAwake ? "hadow":''}></div>
