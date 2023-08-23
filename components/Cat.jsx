@@ -30,6 +30,16 @@ const Cat =()=>{
       };
    },[])
    //-----------------------------------------------------
+   useEffect(()=>{
+    const intervalId = setInterval(() => {
+        dispatch(vocabularyCatActions.reset()) ; 
+      }, 3600000); 
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+   },[])
+
     
    // set localstorage to be cat awake after page reloading
     const wakeUpHandler =()=>{
