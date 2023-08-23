@@ -16,8 +16,6 @@ const Form = ({type, onWordHandler})=>{
 
     const wordIsAdded = useSelector((state)=>state.wordIsAdded);
     const dispatch = useDispatch();
-
-    console.log("boolean ", wordIsAdded);
     
 
     const sourceLanguageHandler =(event)=>{
@@ -81,7 +79,7 @@ const Form = ({type, onWordHandler})=>{
             target,
             usage
         }
-        console.log("word", newWord)
+   
         onWordHandler(newWord);
 
     }

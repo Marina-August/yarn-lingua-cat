@@ -40,7 +40,7 @@ const AddWord =()=>{
               console.log("ok");
               if(isAwake){
                  dispatch(vocabularyCatActions.increment());
-                 localStorage.setItem('counter', counter+1);
+                 localStorage.setItem('counter', counter+1); // set localstorage to remember after reloading how much hunger is
               } else{
 
               }

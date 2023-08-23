@@ -17,11 +17,26 @@ const Cat =()=>{
 
     }
    },[])
+
+   //----- Set Interval for the cat to fall asleep in 30 seconds------
+
+   useEffect(()=>{
+    const intervalId = setInterval(() => {
+        dispatch(vocabularyCatActions.falseAwakeHandler()) ; 
+      }, 30000); 
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+   },[])
+   //-----------------------------------------------------
     
+   // set localstorage to be cat awake after page reloading
     const wakeUpHandler =()=>{
         dispatch(vocabularyCatActions.trueAwakeHandler());
         localStorage.setItem('awake', true);
     }
+    //----------------------------------------------------
 
     return (
         <>
