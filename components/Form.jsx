@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch} from 'react-redux';
+import { vocabularyCatActions } from "@/redux/store";
+
 import Link from "next/link";
 
 const Form = ({type, onWordHandler})=>{
@@ -11,6 +14,12 @@ const Form = ({type, onWordHandler})=>{
     const [example, setExample] = useState('');
     const [ok, setOk] = useState(false);
 
+    const wordIsAdded = useSelector((state)=>state.wordIsAdded);
+    const dispatch = useDispatch();
+
+    console.log("boolean ", wordIsAdded);
+    
+
     const sourceLanguageHandler =(event)=>{
         if(event.target.value!==0){
             setSourceLanguage(event.target.value);
@@ -19,9 +28,8 @@ const Form = ({type, onWordHandler})=>{
     }
 
     const wordHandler = (event)=>{
-        console.log("Word", event.target.value); 
-            setWord(event.target.value)  
-        
+          setWord(event.target.value)  
+          dispatch(vocabularyCatActions.falseWordHandler());  
     }
 
     const targetLanguageHandler = (event)=>{
@@ -31,11 +39,13 @@ const Form = ({type, onWordHandler})=>{
     }
 
     const translationHandler =(event)=>{
-            setTranslation(event.target.value)   
+            setTranslation(event.target.value);
+            dispatch(vocabularyCatActions.falseWordHandler());     
     }
 
     const exampleHandler =(event)=>{
-            setExample(event.target.value)
+            setExample(event.target.value);
+            dispatch(vocabularyCatActions.falseWordHandler());  
     }
 
     useEffect(
@@ -81,6 +91,9 @@ const Form = ({type, onWordHandler})=>{
         <h1 className='head_text text-center'>
           <span className='orange_gradient'>{type} a word</span>
         </h1>
+        {wordIsAdded &&<h2 className='text_succes text-center'>
+          <span className='orange_gradient'>Word is added succesfully!</span>
+        </h2>}
         <form onSubmit ={submitHandler}
         className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism ml-64 '
       >

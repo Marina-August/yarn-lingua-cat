@@ -2,12 +2,17 @@
 
 import Form from "@/components/Form";
 import { useDispatch, useSelector} from 'react-redux';
-import { vocabularyActions } from "@/redux/store";
+import { vocabularyCatActions } from "@/redux/store";
 
 const AddWord =()=>{
   const counter = useSelector((state)=> state.counter);
+  const wordIsAdded = useSelector((state)=>state.wordIsAdded);
+  const isAwake = useSelector((state)=>state.isAwake)
+
   const dispatch = useDispatch();
-    
+
+  console.log("boolean ", wordIsAdded);
+
     const addWord = async (word)=>{
         console.log("page", word)
         try {
@@ -25,7 +30,13 @@ const AddWord =()=>{
             if (response.ok) {
             //   router.push("/personal-page");
               console.log("ok");
-                 dispatch(vocabularyActions.increment());        
+              if(isAwake){
+                 dispatch(vocabularyCatActions.increment());
+              } else{
+
+              }
+                
+               dispatch(vocabularyCatActions.trueWordHandler());        
             }
           } catch (error) {
             console.log(error);

@@ -1,24 +1,37 @@
 import { createSlice,configureStore } from '@reduxjs/toolkit';
 
-const initialVocabularyState = {counter: 0};
+const initialVocabularyCatState = {counter: 0, wordIsAdded: false, isAwake: false};
 
-const vocabularySlice = createSlice({
+const vocabularyCatSlice = createSlice({
     name: "vocabulary",
-    initialState: initialVocabularyState,
+    initialState: initialVocabularyCatState,
     reducers:{
         increment(state){
             state.counter++;
         },
         reset(state){
             state.counter = 0;
+        },
+        trueWordHandler(state){
+            state.wordIsAdded = true;
+        },
+        falseWordHandler(state){
+            state.wordIsAdded = false;
+        },
+        trueAwakeHandler(state){
+            state.isAwake = true;
+        },
+        falseAwakeHandler(state){
+            state.isAwake = false;
         }
+        
     }
 })
 
 const store = configureStore({
-    reducer: vocabularySlice.reducer
+    reducer: vocabularyCatSlice.reducer
 })
 
-export const vocabularyActions = vocabularySlice.actions;
+export const vocabularyCatActions = vocabularyCatSlice.actions;
 
 export default store;

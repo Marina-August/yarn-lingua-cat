@@ -1,17 +1,18 @@
 "use client";
 
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { vocabularyCatActions } from '@/redux/store';
 
 const Cat =()=>{
-    const [isAwake, setIsAwake] = useState(false);
+    const isAwake = useSelector((state)=>state.isAwake)
     const counter = useSelector((state)=>state.counter);
+    const dispatch = useDispatch();
+
     console.log("counter",counter);
     
     const wakeUpHandler =()=>{
-        setIsAwake(true);
+        dispatch(vocabularyCatActions.trueAwakeHandler());
     }
-
 
     return (
         <>
