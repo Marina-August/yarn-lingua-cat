@@ -2,16 +2,25 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { vocabularyCatActions } from '@/redux/store';
+import { useEffect } from 'react';
 
 const Cat =()=>{
     const isAwake = useSelector((state)=>state.isAwake)
     const counter = useSelector((state)=>state.counter);
     const dispatch = useDispatch();
 
-    console.log("counter",counter);
+   useEffect(()=>{
+    const awake = localStorage.getItem('info');
+    if(awake){
+       dispatch(vocabularyCatActions.trueAwakeHandler())
+    }else{
+
+    }
+   },[])
     
     const wakeUpHandler =()=>{
         dispatch(vocabularyCatActions.trueAwakeHandler());
+        localStorage.setItem('awake', true);
     }
 
     return (

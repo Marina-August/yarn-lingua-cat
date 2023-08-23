@@ -3,6 +3,7 @@
 import Form from "@/components/Form";
 import { useDispatch, useSelector} from 'react-redux';
 import { vocabularyCatActions } from "@/redux/store";
+import { useEffect } from "react";
 
 const AddWord =()=>{
   const counter = useSelector((state)=> state.counter);
@@ -11,7 +12,14 @@ const AddWord =()=>{
 
   const dispatch = useDispatch();
 
-  console.log("boolean ", wordIsAdded);
+  useEffect(()=>{
+    const count = localStorage.getItem('counter');
+    if(count){
+       dispatch(vocabularyCatActions.setCounter(count))
+    }else{
+
+    }
+   },[])
 
     const addWord = async (word)=>{
         console.log("page", word)
@@ -32,6 +40,7 @@ const AddWord =()=>{
               console.log("ok");
               if(isAwake){
                  dispatch(vocabularyCatActions.increment());
+                 localStorage.setItem('counter', counter+1);
               } else{
 
               }

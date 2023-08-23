@@ -12,6 +12,9 @@ const vocabularyCatSlice = createSlice({
         reset(state){
             state.counter = 0;
         },
+        setCounter(state, action){
+            state.counter = action.payload
+        },
         trueWordHandler(state){
             state.wordIsAdded = true;
         },
