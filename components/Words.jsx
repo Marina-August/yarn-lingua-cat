@@ -10,7 +10,13 @@ const Words =({onCheckWords})=>{
    const [allWords, setAllWords] = useState([]);
 
    const fetchWords = async () => {
-    const response = await fetch("/api/word");
+    const response = await fetch("/api/word", { 
+      cache: 'no-cache',
+      cache: 'no-store',
+      next: {
+        revalidate: 0,
+      } 
+    });
     const data = await response.json();
     console.log('words:', data);
     setAllWords(data);
