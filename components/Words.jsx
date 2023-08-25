@@ -11,8 +11,6 @@ const Words =({onCheckWords})=>{
 
    const fetchWords = async () => {
     const response = await fetch("/api/word", { 
-      cache: 'no-cache',
-      cache: 'no-store',
       next: {
         revalidate: 0,
       } 
