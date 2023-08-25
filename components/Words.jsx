@@ -12,7 +12,7 @@ const Words =({onCheckWords})=>{
    const fetchWords = async () => {
     const response = await fetch("/api/word");
     const data = await response.json();
-
+    console.log('words:', data);
     setAllWords(data);
     onCheckWords(data);
   };
