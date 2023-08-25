@@ -12,5 +12,5 @@ const Home=()=>{
    
   )
 }
-
+export const revalidate = 0;
 export default Home;

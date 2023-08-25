@@ -13,7 +13,8 @@ const Words =({onCheckWords})=>{
     const response = await fetch("/api/word", { 
       next: {
         revalidate: 0,
-      } 
+      },
+      revalidate: 0 
     });
     const data = await response.json();
     console.log('words:', data);
