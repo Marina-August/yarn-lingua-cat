@@ -1,6 +1,7 @@
 import { connectToDB } from "@/utils/database";
 import Word from "@/models/word";
 
+export const revalidate = 1;
 export const GET = async(request)=>{
     try{
         await connectToDB();
